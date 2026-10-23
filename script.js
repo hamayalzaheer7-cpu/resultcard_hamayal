@@ -1,11 +1,12 @@
 
-// Calculate the student's result
+// Make result function
 function showResult(e) {
-    e.preventDefault();
+    e.preventDefault(); // Stop page from refreshing
 
+    // Get student name
     var name = document.getElementById("name").value.trim();
 
-    // Get marks as text first
+    // Get subject marks
     var englishText = document.getElementById("english").value;
     var urduText = document.getElementById("urdu").value;
     var mathText = document.getElementById("math").value;
@@ -14,7 +15,7 @@ function showResult(e) {
     if (name === "" || englishText === "" ||
         urduText === "" || mathText === "") {
         alert("Please fill all fields!");
-        return;
+        return; // Stop the function
     }
 
     // Convert marks into numbers
@@ -22,9 +23,10 @@ function showResult(e) {
     var urdu = Number(urduText);
     var math = Number(mathText);
 
-    // Check marks between 0 and 100
+    // Store all marks in an array
     var marks = [english, urdu, math];
 
+    // Check if marks are valid
     for (var i = 0; i < marks.length; i++) {
         if (marks[i] < 0 || marks[i] > 100 ||
             !Number.isInteger(marks[i])) {
@@ -39,7 +41,7 @@ function showResult(e) {
     var percentage = (obtained / total) * 100;
     var grade;
 
-    // Calculate grade
+    // Find the grade
     if (percentage >= 80) {
         grade = "A";
     } else if (percentage >= 70) {
@@ -59,7 +61,7 @@ function showResult(e) {
         status = "Fail";
     }
 
-    // Display the result
+    // Show the result on the page
     document.getElementById("result").innerHTML = `
         <h2>Result Card</h2>
         <h3>${name}</h3>
