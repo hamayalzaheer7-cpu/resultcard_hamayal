@@ -1,4 +1,3 @@
-
 // Make result function
 function showResult(e) {
     e.preventDefault();
