@@ -1,7 +1,7 @@
 
 // Make result function
 function showResult(e) {
-    e.preventDefault(); // Stop page from refreshing
+    e.preventDefault();
 
     // Get student name
     var name = document.getElementById("name").value.trim();
@@ -15,7 +15,8 @@ function showResult(e) {
     if (name === "" || englishText === "" ||
         urduText === "" || mathText === "") {
         alert("Please fill all fields!");
-        return; // Stop the function
+        return;
+         // Stop the function
     }
 
     // Convert marks into numbers
